@@ -1,0 +1,28 @@
+.eyebrow {
+  border-radius: 50px;
+  border: 1px solid #ece4fb;
+  background: #f6f2fd;
+  padding: 6px 16px;
+  color: var(--brand-600, #6d39cf);
+  font-family: Geist;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 24px;
+  white-space: nowrap;
+}
+
+.eyebrow.invert {
+  color: #9365e9;
+  border-radius: 50px;
+  border: 1px solid rgba(236, 228, 251, 0.15);
+  background: rgba(246, 242, 253, 0.1);
+}
+
+@media screen and (max-width: 640px) {
+  .eyebrow {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+}

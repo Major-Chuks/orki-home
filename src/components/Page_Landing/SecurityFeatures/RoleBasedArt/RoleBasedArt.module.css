@@ -1,0 +1,123 @@
+.container {
+  width: 100%;
+  height: 230px;
+  background: #f6f2fd;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.circleGroup {
+  position: relative;
+  width: 120px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.backdropWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.backdropCircle {
+  width: 146px;
+  height: 146px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.userCircle {
+  position: absolute;
+  right: 10px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  background: #eff6fd;
+  box-shadow:
+    0 0 0 4.391px #fff,
+    0 4.391px 6.587px -1.098px rgba(0, 0, 0, 0.1),
+    0 2.196px 4.391px -2.196px rgba(0, 0, 0, 0.1);
+}
+
+.userIcon {
+  width: 24px;
+  height: 24px;
+  opacity: 0.5;
+}
+
+.userCheck {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #00bc7d;
+  box-shadow: 0 0 0 2.196px #fff;
+  color: #fff;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+}
+
+.shieldCircle {
+  position: absolute;
+  left: 10px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: var(
+    --Gradient,
+    linear-gradient(180deg, #875ade 0%, #5d2fb5 100%)
+  );
+  box-shadow: 0 4.148px 13.3px 0 rgba(145, 78, 234, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.shieldIcon {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0) invert(1);
+}
+
+.pillsRow {
+  display: flex;
+  gap: 8px;
+}
+
+.pill {
+  padding: 6px 14px;
+  border-radius: 16777200px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  font-family: Geist;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.312px;
+}

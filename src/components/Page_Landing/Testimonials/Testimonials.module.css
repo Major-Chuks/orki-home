@@ -1,0 +1,221 @@
+.section {
+  width: 100%;
+  padding-top: 128px;
+  padding-bottom: 128px;
+  padding-left: 100px;
+  transition: all 300ms;
+}
+
+.inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 64px;
+  position: relative;
+}
+
+.headingText {
+  width: 100%;
+  max-width: 498px;
+}
+
+.heading {
+  color: #242628;
+  font-family: "Funnel Display";
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 110%;
+  margin-bottom: 24px;
+}
+
+.subheading {
+  color: var(--COLORS-Grey-grey-600, #727680);
+  font-family: Geist;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 26px; /* 144.444% */
+}
+
+.cards {
+  flex: 1;
+  width: 100%;
+  max-width: 800px;
+  /* overflow: visible; */
+  display: flex;
+}
+
+.card {
+  display: flex;
+  width: 90%;
+  max-width: 593px;
+  min-height: 352px;
+  height: 100%;
+  padding: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 100px;
+  flex: 1;
+  align-self: stretch;
+  border-radius: 32px;
+  background: #f8f8f8;
+}
+
+.companyRow {
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+.companyName {
+  color: #242628;
+  font-family: Geist;
+  font-size: 23.273px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 23.273px;
+}
+
+.quote {
+  color: var(--grey-800, #45484e);
+  font-family: Geist;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px; /* 144.444% */
+}
+
+.person {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  aspect-ratio: 1/1;
+  border-radius: 40px;
+  background: #242628;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.personName {
+  color: #242628;
+  font-family: Geist;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px; /* 120% */
+}
+
+.personRole {
+  color: var(--grey-900, #35373b);
+  font-family: "DM Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 120% */
+}
+
+.controls {
+  position: absolute;
+  bottom: 0;
+  right: 100px;
+  transform: translateY(64px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.arrowButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: #979ba4;
+  transition: all 300ms;
+}
+
+.arrowButton:hover {
+  color: #242628;
+}
+
+@media screen and (max-width: 1280px) {
+  .section {
+    padding: 60px 0;
+    padding-left: 52px;
+    padding-bottom: 880px;
+  }
+
+  .headingText {
+    max-width: 320px;
+  }
+
+  .heading {
+    font-size: 32px;
+  }
+
+  .cards {
+    max-width: 600px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .section {
+    padding: 40px 0;
+    padding-bottom: 88px;
+  }
+
+  .inner {
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .headingText {
+    max-width: 100%;
+    padding: 0 24px;
+  }
+
+  .heading {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+
+  .subheading {
+    font-family: Geist;
+    font-size: 16px;
+  }
+
+  .cards {
+    max-width: 100%;
+    padding-left: 24px;
+  }
+
+  .card {
+    width: 320px;
+    height: 440px;
+    gap: 42px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .inner {
+    gap: 32px;
+  }
+}

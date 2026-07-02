@@ -1,0 +1,129 @@
+.hero {
+  width: 100%;
+  max-width: 1200px;
+  padding: 32px;
+  padding-top: 91px;
+  padding-bottom: 0;
+  transition: all 300ms;
+  position: relative;
+  border-left: 1px solid #1e1f2512;
+  border-right: 1px solid #1e1f2512;
+}
+
+.inner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.heading {
+  color: #242628;
+  text-align: center;
+  font-family: "Funnel Display";
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 64px;
+  letter-spacing: -0.64px;
+  margin-bottom: 20px;
+}
+
+.headingAccent {
+  background: linear-gradient(
+    91deg,
+    #875ade 0%,
+    #5d2fb5 25%,
+    #d1b8ff 50%,
+    #5d2fb5 75%,
+    #875ade 100%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+}
+
+.subheading {
+  max-width: 748px;
+  color: var(--grey-600, #727680);
+  text-align: center;
+  font-family: Geist;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px; /* 140% */
+  letter-spacing: -0.2px;
+  margin-bottom: 46px;
+}
+
+.ctaRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+@media screen and (max-width: 1280px) {
+  .hero {
+    max-width: 1024px;
+  }
+}
+
+@media screen and (max-width: 1060px) {
+  .hero {
+    max-width: 900px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .heading {
+    font-size: 48px;
+  }
+
+  .subheading {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .hero {
+    padding: 16px;
+    padding-top: 90px;
+    padding-bottom: 0;
+  }
+
+  .heading {
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 46px;
+    letter-spacing: -0.4px;
+    margin-bottom: 17px;
+  }
+
+  .subheading {
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: -0.16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .heading {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 36px;
+    letter-spacing: -0.4px;
+  }
+}

@@ -1,0 +1,182 @@
+.section {
+  width: 100%;
+  max-width: 1314px;
+  padding-top: 64px;
+  padding-bottom: 64px;
+  transition: all 300ms;
+}
+
+.banner {
+  width: 100%;
+  min-height: 442px;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 32px;
+  background-color: #0a0416;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      var(--navy-line) 0,
+      var(--navy-line) 1px,
+      transparent 1px,
+      transparent 64px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      var(--navy-line) 0,
+      var(--navy-line) 1px,
+      transparent 1px,
+      transparent 64px
+    );
+  padding: 88px 32px;
+}
+
+.square1,
+.square2,
+.square3,
+.square4 {
+  position: absolute;
+  background: #170d2b;
+  display: block;
+}
+
+.square1 {
+  width: 64px;
+  height: 64px;
+  top: 0;
+  left: 128px;
+}
+
+.square2 {
+  width: 128px;
+  height: 64px;
+  top: 64px;
+  left: 0;
+}
+
+.square3 {
+  width: 64px;
+  height: 128px;
+  bottom: 0;
+  right: 192px;
+}
+
+.square4 {
+  width: 64px;
+  height: 64px;
+  top: 0;
+  right: 64px;
+}
+
+.content {
+  width: 100%;
+  max-width: 915px;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.heading {
+  color: var(--white-500, #fff);
+  text-align: center;
+  font-family: "Funnel Display";
+  font-size: 46px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 64px;
+  margin-bottom: 4px;
+}
+
+.subheading {
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  font-family: Geist;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px; /* 200% */
+}
+
+.statsRow {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.statValue {
+  color: var(--white-500, #fff);
+  text-align: center;
+  font-family: Geist;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 54px; /* 112.5% */
+}
+
+.statLabel {
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  font-family: Geist;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+@media screen and (max-width: 1280px) {
+  .section {
+    max-width: 1024px;
+  }
+
+  .heading {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 1060px) {
+  .section {
+    padding: 60px 32px;
+    max-width: 900px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .section {
+    padding: 64px 16px;
+  }
+
+  .banner {
+    padding: 32px 16px;
+    padding-bottom: 40px;
+  }
+
+  .heading {
+    font-size: 32px;
+    line-height: normal;
+    margin-bottom: 12px;
+  }
+
+  .subheading {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .statsRow {
+    grid-template-columns: auto;
+    gap: 46px;
+  }
+
+  .statValue {
+    font-size: 40px;
+    line-height: 54px;
+  }
+}

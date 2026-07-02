@@ -1,0 +1,5 @@
+.placeholder {
+  display: block;
+  flex-shrink: 0;
+  background-color: var(--gray-200);
+}

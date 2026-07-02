@@ -1,0 +1,91 @@
+import ImagePlaceholder from "../ImagePlaceholder/ImagePlaceholder";
+import styles from "./ProblemSection.module.css";
+import gp1 from "@/assets/landing-page/global-payment1.png";
+import gp2 from "@/assets/landing-page/global-payment2.png";
+import gp3 from "@/assets/landing-page/global-payment3.png";
+import gp4 from "@/assets/landing-page/global-payment4.png";
+import gp2Bg from "@/assets/landing-page/global-payment2-bg.png";
+import gp4Bg from "@/assets/landing-page/global-payment4-bg.png";
+
+import Image from "next/image";
+import FadeIn from "../Animations/FadeIn";
+import ScaleIn from "../Animations/ScaleIn";
+
+const PROBLEMS = [
+  {
+    title: "Getting paid globally is complicated",
+    body: "Receiving international payments often means juggling crypto wallets, banks, exchanges, and payout providers.",
+    art: gp1,
+    bgImage: "",
+  },
+  {
+    title: "Moving between fiat and stablecoins is inefficient",
+    body: "Converting funds across banking rails and stablecoin networks is still slow, fragmented, and expensive.",
+    art: gp2,
+    bgImage: gp2Bg,
+  },
+  {
+    title: "Spending global balances isn't seamless",
+    body: "Businesses juggle multiple wallets, exchanges, and bank accounts to manage stablecoin funds.",
+    art: gp3,
+    bgImage: "",
+  },
+  {
+    title: "Can't spend crypto directly",
+    body: "To use your earnings, you have to exit crypto entirely — losing time, fees, and flexibility.",
+    art: gp4,
+    bgImage: gp4Bg,
+  },
+] as const;
+
+function ProblemSection() {
+  return (
+    <section className={styles.section}>
+      <div className={styles.inner}>
+        <FadeIn delay={0.1}>
+          <h2 className={styles.heading}>
+            Global Payment weren&apos;t built for
+            <br />
+            stablecoins
+          </h2>
+        </FadeIn>
+        <FadeIn delay={0.3}>
+          <p className={styles.subheading}>
+            Receiving payments, converting between fiat and stablecoins, and
+            spending globally still requires multiple disconnected platforms.
+          </p>
+        </FadeIn>
+
+        <div className={styles.grid}>
+          {PROBLEMS.map((item, idx) => (
+            <FadeIn
+              delay={0.2 + idx * 0.15}
+              key={item.title}
+              className={styles.cardWrapper}
+              motionType="bouncy"
+            >
+              <article
+                style={{
+                  backgroundImage: item.bgImage
+                    ? `url(${item.bgImage.src})`
+                    : "",
+                }}
+                className={styles.card}
+              >
+                <div className={styles.cardText}>
+                  <h3 className={styles.cardTitle}>{item.title}</h3>
+                  <p className={styles.cardBody}>{item.body}</p>
+                </div>
+                <div className={styles.cardArt}>
+                  <Image src={item.art} alt="" />
+                </div>
+              </article>
+            </FadeIn>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default ProblemSection;

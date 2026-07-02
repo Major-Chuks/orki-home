@@ -1,0 +1,94 @@
+.container {
+  width: 100%;
+  height: 230px;
+  background: #f6f2fd;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  overflow: hidden;
+}
+
+.backdropWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.backdropCircle {
+  width: 146px;
+  height: 146px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.digitsRow {
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+}
+
+.digitBox {
+  position: relative;
+  width: 48px;
+  height: 60px;
+  border-radius: 12px;
+  background: #fff;
+  border: 2px solid #f2ecfc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.digitText {
+  font-size: 24px;
+  font-weight: 600;
+  color: #8b5cf6;
+}
+
+.checkBadge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #8b5cf6;
+  color: #fff;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 3;
+}
+
+.lockBox {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1d293d 0%, #020618 100%);
+  box-shadow:
+    0 11.429px 17.143px -3.429px rgba(0, 0, 0, 0.1),
+    0 4.571px 6.857px -4.571px rgba(0, 0, 0, 0.1);
+}
+
+.lockIcon {
+  width: 27px;
+  height: 27px;
+  filter: brightness(0) invert(1);
+}

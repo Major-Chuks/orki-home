@@ -1,0 +1,215 @@
+.section {
+  width: 100%;
+  padding-top: 96px;
+  padding-bottom: 120px;
+}
+
+.inner {
+  width: 100%;
+  max-width: 1104px;
+  margin: 0 auto;
+}
+
+.headingText {
+  margin-bottom: 48px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.heading {
+  color: #242628;
+  font-family: "Funnel Display";
+  font-size: 46px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.46px;
+  margin-top: 12px;
+}
+
+.heading span {
+  color: #783fe4;
+}
+
+.link {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  color: #0f0f0e;
+  font-family: Geist;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20.25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.link:hover {
+  color: #783fe4;
+}
+
+.link svg {
+  transition: all 300ms;
+}
+
+.link:hover svg {
+  transform: translateX(4px) translateY(-4px);
+}
+
+.grid {
+  width: 100%;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(3, 1fr);
+  overflow: hidden;
+}
+
+.card {
+  min-width: 300px;
+  border-radius: 16px;
+  border: 1px solid #efefef;
+  background: #fff;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.04);
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  pointer-events: none;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.cardId {
+  color: var(--brand-600, #6d39cf);
+  font-family: Geist;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16.5px;
+  letter-spacing: 1.54px;
+}
+
+.cardIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardTitle {
+  color: #242628;
+  font-family: Geist;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 33px;
+  letter-spacing: -0.22px;
+}
+
+.cardBody {
+  color: var(--grey-600, #727680);
+  font-family: Geist;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22.275px;
+  padding: 16px 0;
+}
+
+.offset {
+  flex: 1;
+}
+
+.status {
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: var(--grey-400, #979ba4);
+  font-family: Geist;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 17.25px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 16777200px;
+  background: #979ba4;
+  display: block;
+}
+
+.live {
+  color: #007a55;
+}
+
+.liveDot {
+  background: #096;
+}
+
+@media screen and (max-width: 1280px) {
+  .inner {
+    max-width: 1024px;
+  }
+
+  .heading {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 1060px) {
+  .section {
+    padding: 60px 32px;
+  }
+
+  .inner {
+    max-width: 900px;
+  }
+
+  .grid {
+    overflow: auto;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .headingText {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .heading {
+    font-size: 32px;
+  }
+}

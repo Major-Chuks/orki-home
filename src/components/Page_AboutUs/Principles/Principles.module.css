@@ -1,0 +1,137 @@
+.section {
+  width: 100%;
+  padding: 80px 0;
+}
+
+.inner {
+  width: 100%;
+  max-width: 1104px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.heading {
+  color: #242628;
+  text-align: center;
+  font-family: "Funnel Display";
+  font-size: 46px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.46px;
+  margin-top: -12px;
+  margin-bottom: 46px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.card {
+  height: 100%;
+  border-radius: 16px;
+  border: 1px solid #f5f5f5;
+  background: #f8f8f8;
+  padding: 24px;
+}
+
+.icon {
+  margin-bottom: 16px;
+  width: 44px;
+  height: 44px;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1/1;
+  border-radius: 14px;
+  border: 1px solid #e5e5e5;
+  background: #fff;
+  overflow: hidden;
+}
+
+.card:hover .icon img {
+  animation: swipeDiagonal 0.6s forwards;
+}
+
+@keyframes swipeDiagonal {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+    animation-timing-function: ease-in;
+  }
+  30% {
+    transform: translate(150%, -150%);
+    opacity: 0;
+  }
+  31% {
+    transform: translate(-150%, 150%);
+    opacity: 0;
+    /* This spring curve only applies to the entrance back to center */
+    animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+.cardTitle {
+  color: #242628;
+  font-family: Geist;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 27px;
+  letter-spacing: -0.439px;
+  margin-bottom: 12px;
+}
+
+.cardBody {
+  color: var(--grey-600, #727680);
+  font-family: Geist;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22.75px;
+  letter-spacing: -0.15px;
+}
+
+@media screen and (max-width: 1280px) {
+  .inner {
+    max-width: 1024px;
+  }
+
+  .heading {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 1060px) {
+  .section {
+    padding: 60px 32px;
+  }
+
+  .inner {
+    max-width: 900px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .section {
+    padding: 60px 16px;
+  }
+
+  .heading {
+    font-size: 32px;
+  }
+
+  .grid {
+    grid-template-columns: auto;
+  }
+}

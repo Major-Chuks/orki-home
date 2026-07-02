@@ -1,0 +1,523 @@
+.section {
+  width: 100%;
+  max-width: 1104px;
+  padding-bottom: 64px;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.heading {
+  color: #242628;
+  text-align: center;
+  font-family: "Funnel Display";
+  font-size: 46px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 8px;
+}
+
+.subheading {
+  max-width: 662px;
+  color: var(--grey-600, #727680);
+  text-align: center;
+  font-family: Geist;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px; /* 155.556% */
+  margin-bottom: 56px;
+}
+
+.panel {
+  width: 100%;
+  max-width: 1024px;
+  height: 460px;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  overflow: hidden;
+  border-radius: 24px;
+  border: 1px solid var(--brand-50, #f2ecfc);
+  background: #fff;
+  box-shadow:
+    0 0 0 1px #ede9fe,
+    0 20px 60px 0 rgba(124, 58, 237, 0.08);
+}
+
+/* LEFT PANE */
+.leftPane {
+  width: 341px;
+  flex-shrink: 0;
+  border-right: 1px solid #f2ecfc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: radial-gradient(#e5e7eb 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+  background-position: center;
+  position: relative;
+}
+
+.leftPaneActiveDots {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: radial-gradient(#875ade 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+  background-position: center;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.businessCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  z-index: 1;
+}
+
+.businessTop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.businessIconBox {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow:
+    0 0 0 1px #ede9fe,
+    0 1px 3px 0 rgba(0, 0, 0, 0.1),
+    0 1px 2px -1px rgba(0, 0, 0, 0.1);
+}
+
+.businessIcon {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+}
+
+.businessLabel {
+  color: var(--grey-600, #727680);
+  font-family: Geist;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.312px;
+}
+
+.balanceBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 20px;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow:
+    0 0 0 1px #ede9fe,
+    0 1px 3px 0 rgba(0, 0, 0, 0.1),
+    0 1px 2px -1px rgba(0, 0, 0, 0.1);
+}
+
+.balanceLabel {
+  color: var(--grey-400, #979ba4);
+  text-align: center;
+  font-family: Geist;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  margin-bottom: 4px;
+}
+
+.balanceValue {
+  color: #242628;
+  text-align: center;
+  font-family: Geist;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: -0.312px;
+}
+
+/* CONNECTOR */
+.connector {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.connectorLine {
+  flex: 1;
+  height: 1px;
+  background: #f2ecfc;
+  position: relative;
+  overflow: hidden;
+}
+
+.connectorLineFill {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #f59e0b, #10b981);
+}
+
+.hub {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 16px;
+  border: 1px solid var(--grey-200, #e4e7ec);
+  background: #fff;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+.hubMark {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+}
+
+.amountPill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  padding: 6px 12px;
+  border-radius: 16777200px;
+  border: 1px solid var(--grey-200, #e4e7ec);
+  background: #fff;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.05),
+    0 2px 4px -2px rgba(0, 0, 0, 0.07);
+  color: #242628;
+  font-family: Geist;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: -0.15px;
+}
+
+.amountFlag {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+}
+
+/* RIGHT PANE */
+.rightPane {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding-right: 16px;
+}
+
+.recipientList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recipientRow {
+  width: 280px;
+  height: 50px;
+  padding: 4px;
+  padding-right: 16px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+  border-radius: 16777200px;
+  border: 1px solid var(--brand-50, #f2ecfc);
+  background: #fff;
+  flex-shrink: 0;
+}
+
+.recipientRowActive {
+  border: 1px solid #7c3aed;
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.08);
+}
+
+.avatarBox {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatarFlag {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  background: #fff;
+}
+
+.recipientText {
+  margin-left: 12px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.recipientName {
+  color: #242628;
+  font-family: Geist;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 19.5px;
+  letter-spacing: -0.206px;
+  margin-bottom: 2px;
+}
+
+.recipientMeta {
+  color: var(--grey-600, #727680);
+  font-family: Geist;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16.5px;
+  letter-spacing: 0.064px;
+}
+
+.payingBadge {
+  padding: 2px 6px;
+  border-radius: 16777200px;
+  background: #f5f3ff;
+  box-shadow: 0 0 0 1px rgba(221, 214, 255, 0.7);
+  flex-shrink: 0;
+  color: #7008e7;
+  font-family: Geist;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 15px;
+  letter-spacing: 0.117px;
+}
+
+@media screen and (max-width: 1280px) {
+  .section {
+    padding: 60px 32px;
+  }
+
+  .inner {
+    max-width: 1024px;
+  }
+
+  .heading {
+    font-size: 32px;
+  }
+}
+
+@media screen and (max-width: 1060px) {
+  .inner {
+    max-width: 900px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .panel {
+    flex-direction: column;
+    height: auto;
+    padding-bottom: 40px;
+  }
+
+  .leftPane {
+    width: 100%;
+    padding: 24px;
+    border-right: none;
+    border-bottom: 1px solid #f2ecfc;
+  }
+
+  .connector {
+    flex-direction: column;
+  }
+
+  .connectorLine {
+    width: 1px;
+    height: 100px;
+    flex: none;
+  }
+
+  .connectorLineFill {
+    background: linear-gradient(0deg, #3b82f6, #8b5cf6, #f59e0b, #10b981);
+  }
+
+  .hub,
+  .amountPill {
+    transform: rotate(90deg);
+    position: relative;
+    z-index: 10;
+  }
+
+  .rightPane {
+    width: 100%;
+    padding-right: 0;
+    overflow: hidden;
+    justify-content: center;
+  }
+
+  .recipientList {
+    flex-direction: row;
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .section {
+    padding: 0 16px;
+    padding-bottom: 54px;
+  }
+
+  .heading {
+    font-size: 32px;
+  }
+
+  .subheading {
+    font-size: 16px;
+    margin-bottom: 46px;
+  }
+
+  .panel {
+    height: 407px;
+    padding-bottom: 35px;
+  }
+
+  .leftPane {
+    height: 141px;
+  }
+
+  .businessTop {
+    gap: 5px;
+  }
+
+  .businessIconBox {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+  }
+
+  .businessIcon {
+    width: 10px;
+    height: 10px;
+  }
+
+  .businessLabel {
+    font-size: 12px;
+    line-height: normal;
+  }
+
+  .balanceBox {
+    padding: 6px 10px;
+    border-radius: 7px;
+  }
+
+  .balanceLabel {
+    font-size: 10px;
+    line-height: normal;
+  }
+
+  .balanceValue {
+    font-size: 12px;
+    line-height: normal;
+  }
+
+  .connectorLine {
+    height: 40px;
+  }
+
+  .connector > :nth-child(1) {
+    height: 16px;
+  }
+
+  .connector > :nth-child(3) {
+    height: 64px;
+  }
+
+  .hub {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+  }
+
+  .amountPill {
+    font-size: 9px;
+    line-height: normal;
+    padding: 4px 8px;
+  }
+
+  .recipientRow {
+    width: 160px;
+    height: 32px;
+  }
+
+  .avatarBox {
+    width: 24px;
+    height: 24px;
+  }
+
+  .avatarFlag {
+    width: 10.5px;
+    height: 10.5px;
+  }
+
+  .recipientName {
+    font-size: 8px;
+    line-height: normal;
+    line-height: 11px;
+  }
+
+  .recipientMeta {
+    font-size: 7px;
+    line-height: normal;
+    margin-bottom: 0;
+  }
+
+  .payingBadge {
+    font-size: 6px;
+    padding: 1px 3px;
+    line-height: normal;
+  }
+}

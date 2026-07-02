@@ -1,0 +1,153 @@
+.section {
+  width: 100%;
+  max-width: 1314px;
+  padding: 64px 0;
+  transition: all 300ms;
+}
+
+.banner {
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+  width: 100%;
+  border-radius: 24px;
+  background-color: #0a0416;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      var(--navy-line) 0,
+      var(--navy-line) 1px,
+      transparent 1px,
+      transparent 64px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      var(--navy-line) 0,
+      var(--navy-line) 1px,
+      transparent 1px,
+      transparent 64px
+    );
+  padding: 56px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 32px;
+}
+
+.square1,
+.square2 {
+  position: absolute;
+  background: #170f29;
+}
+
+.square1 {
+  width: 96px;
+  height: 64px;
+  top: 0;
+  right: 30%;
+}
+
+.square2 {
+  width: 64px;
+  height: 96px;
+  bottom: 0;
+  left: 10%;
+}
+
+.copy {
+  position: relative;
+  z-index: 1;
+}
+
+.heading {
+  color: #fff;
+  font-family: "Funnel Display";
+  font-size: 46px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 55px; /* 119.565% */
+  margin-bottom: 16px;
+}
+
+.subheading {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: Geist;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 35px; /* 145.833% */
+}
+
+.cta {
+  margin-top: 46px;
+}
+
+.imageContainer {
+  width: 100%;
+  max-width: 562px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: auto;
+}
+
+.diagram {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  display: none;
+}
+
+@media screen and (max-width: 1280px) {
+  .section {
+    max-width: 1024px;
+  }
+
+  .heading {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 1060px) {
+  .section {
+    padding: 60px 32px;
+    max-width: 900px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .section {
+    padding: 60px 16px;
+    padding-bottom: 0;
+  }
+
+  .banner {
+    grid-template-columns: auto;
+    padding: 32px 16px;
+    gap: 84px;
+    align-items: center;
+    align-content: center;
+  }
+
+  .heading {
+    font-size: 32px;
+    line-height: normal;
+  }
+
+  .subheading {
+    font-size: 16px;
+  }
+
+  .imageContainer {
+    max-width: 100%;
+  }
+}
