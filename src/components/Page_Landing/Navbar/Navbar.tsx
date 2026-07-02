@@ -5,28 +5,34 @@ import styles from "./Navbar.module.css";
 import logo from "@/assets/landing-page/logo.svg";
 import Image from "next/image";
 import MenuIcon from "@/assets/Components/MenuIcon";
+import { useRouter } from "next/navigation";
 
 const NAV_LINKS = [
-  { label: "Home", href: "#home" },
-  { label: "FAQ", href: "#faq" },
-  { label: "About us", href: "#about" },
-  { label: "Terms", href: "#terms" },
-  { label: "Privacy", href: "#privacy" },
+  { label: "Home", href: "/" },
+  { label: "FAQ", href: "/" },
+  { label: "About us", href: "/about-us" },
+  { label: "Terms", href: "/" },
+  { label: "Privacy", href: "/" },
 ];
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const router = useRouter();
 
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
-        <a href="#home" className={styles.logo}>
+        <a href="/" className={styles.logo}>
           <Image src={logo} alt="" />
         </a>
 
         <nav className={styles.nav} aria-label="Primary">
           {NAV_LINKS.map((link) => (
-            <div key={link.label} className={styles.navLink}>
+            <div
+              onClick={() => router.push(link.href)}
+              key={link.label}
+              className={styles.navLink}
+            >
               {link.label}
             </div>
           ))}

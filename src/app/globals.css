@@ -1,49 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap");
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* ---- Brand purple ramp ---- */
+  --purple-50: #f5f1fe;
+  --purple-100: #efe0ff;
+  --purple-200: #ddc8fb;
+  --purple-300: #b89af0;
+  --purple-400: #9a72e8;
+  --purple-500: #7b4fe0;
+  --purple-600: #6936c9;
+  --purple-700: #5527a3;
+  --purple-glow: #8b5cf6;
+
+  /* ---- Neutrals / ink ---- */
+  --ink-900: #14121b;
+  --ink-700: #312d3b;
+  --ink-500: #6b7280;
+  --ink-300: #9b98a3;
+  --ink-100: #e7e5eb;
+
+  --gray-50: #f8f7fb;
+  --gray-100: #f1f0f5;
+  --gray-200: #e4e2eb;
+  --white: #ffffff;
+
+  /* ---- Dark / navy sections ---- */
+  --navy-950: #0a0512;
+  --navy-900: #120a1f;
+  --navy-800: #1c1130;
+  --navy-line: rgba(255, 255, 255, 0.08);
+  --navy-text-dim: rgba(255, 255, 255, 0.6);
+  --navy-text-faint: rgba(255, 255, 255, 0.4);
+
+  /* ---- Accent card backgrounds ---- */
+  --card-blue: #cfe4ff;
+  --card-blue-deep: #9cc4f7;
+  --card-green: #e1efd5;
+  --card-green-deep: #b9d99e;
+  --card-purple: #efe0ff;
+  --card-purple-deep: #c9a4f5;
+
+  /* ---- Status ---- */
+  --success: #1a9b5c;
+  --success-bg: #e3f7ec;
+  --danger: #d23b3b;
+  --danger-bg: #fbe9e9;
+
+  /* ---- Typography ---- */
+  --font-display: "Plus Jakarta Sans", "Inter", -apple-system, sans-serif;
+  --font-body: "Inter", -apple-system, sans-serif;
+
+  /* ---- Radius ---- */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 999px;
+
+  /* ---- Shadows ---- */
+  --shadow-sm: 0 2px 8px rgba(20, 18, 27, 0.06);
+  --shadow-md: 0 8px 24px rgba(20, 18, 27, 0.08);
+  --shadow-lg: 0 20px 48px rgba(20, 18, 27, 0.12);
+  --shadow-purple: 0 12px 28px rgba(123, 79, 224, 0.28);
+
+  /* ---- Layout ---- */
+  --content-max: 1160px;
+  --gutter-desktop: 32px;
+  --gutter-mobile: 20px;
+  /* new root above */
+  --error: #ef3d3d;
+  --faint: #b5b5bd;
+  --primary: #783fe4;
+  --primary-hover: #46319d;
+  --dark: #353945;
+  --border: #8492a6;
+  --disabled: #eee9ff;
+  --disabled-faint: #bababa;
+  --light: #fdfafa;
+  --white: #fff;
+  --card-border: 1px solid var(--Gray-200, #e4e7ec);
+  --card-shadow: 0 4px 10px 0 rgba(93, 134, 194, 0.06);
+
+  --sf-purple-50: #f2ecfc;
+  --sf-purple-100: #ede9fe;
+  --sf-purple-500: #783fe4;
+  --sf-purple-600: #7c3aed;
+  --sf-purple-700: #6d28d9;
+
+  --sf-green-50: #f0fdf4;
+  --sf-green-100: #dcfce7;
+  --sf-green-500: #22c55e;
+  --sf-green-600: #16a34a;
+
+  --sf-red-50: #fff1f2;
+  --sf-red-500: #ef4444;
+
+  --sf-orange-50: #fff7ed;
+  --sf-orange-200: #fed7aa;
+  --sf-orange-500: #f97316;
+
+  --sf-gray-50: #f2f3f4;
+  --sf-gray-100: #f3f4f6;
+  --sf-gray-200: #e5e7eb;
+  --sf-gray-300: #d1d5db;
+  --sf-gray-400: #9ca3af;
+  --sf-gray-500: #6b7280;
+  --sf-gray-600: #4b5563;
+  --sf-gray-700: #374151;
+  --sf-gray-900: #111827;
+
+  --sf-white: #ffffff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+body,
 html {
-  height: 100%;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  color: var(--neutral-4, #777e90);
+  font-family: "DM Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  font-family: "Geist";
+  -webkit-tap-highlight-color: transparent;
 }
 
 * {
   box-sizing: border-box;
-  padding: 0;
+  scrollbar-width: thin;
+}
+
+*:not(ul):not(ol):not(li) {
   margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: disc;
 }
 
 a {
-  color: inherit;
   text-decoration: none;
+  color: inherit;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+/* Hide the arrows in Webkit browsers (Chrome, Safari) */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Hide the arrows in Mozilla browsers (Firefox) */
+input[type="number"] {
+  -moz-appearance: textfield;
 }

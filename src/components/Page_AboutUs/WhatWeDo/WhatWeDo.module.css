@@ -70,8 +70,13 @@
   overflow: hidden;
 }
 
-.card {
+.cardWrapper {
+  width: 100%;
   min-width: 300px;
+}
+
+.card {
+  height: 100%;
   border-radius: 16px;
   border: 1px solid #efefef;
   background: #fff;

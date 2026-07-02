@@ -1,4 +1,6 @@
-import { useEffect } from "react";
+"use client";
+
+import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import Button from "../Button/Button";
 import styles from "./MobileMenu.module.css";
@@ -18,12 +20,21 @@ type MobileMenuProps = {
 };
 
 function MobileMenu({ open, onClose, links }: MobileMenuProps) {
+  const [mounted, setMounted] = useState(false);
+
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
-  }, [open]);
+  }, [open, mounted]);
+
+  if (!mounted) return null;
 
   return createPortal(
     <div className={`${styles.overlay} ${open ? styles.overlayOpen : ""}`}>

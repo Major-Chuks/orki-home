@@ -52,6 +52,7 @@ const WhatWeDo = () => {
               delay={0.2 + idx * 0.15}
               motionType="bouncy"
               key={feature.id}
+              className={styles.cardWrapper}
             >
               <div className={styles.card}>
                 <div className={styles.overlay}></div>

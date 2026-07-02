@@ -20,16 +20,17 @@ function StatsBanner() {
           <span className={styles.square4} />
 
           <div className={styles.content}>
-            <h2 className={styles.heading}>
-              <FadeIn delay={0.1}>
+            <FadeIn delay={0.1}>
+              <h2 className={styles.heading}>
                 Global Payment Infrastructure, Simplified
-              </FadeIn>
-            </h2>
-            <p className={styles.subheading}>
-              <FadeIn delay={0.3}>
+              </h2>
+            </FadeIn>
+
+            <FadeIn delay={0.3}>
+              <p className={styles.subheading}>
                 Optimized for speed, cost-efficiency, and worldwide coverage
-              </FadeIn>
-            </p>
+              </p>
+            </FadeIn>
 
             <div className={styles.statsRow}>
               {STATS.map((stat) => (

@@ -35,9 +35,9 @@ function Footer() {
             16192 Coastal Highway, Lewes, Delaware 19958, County of Sussex.
           </p>
           <div className={styles.socials}>
-            {SOCIALS.map((icon) => (
+            {SOCIALS.map((icon, idx) => (
               <Image
-                key={icon}
+                key={idx}
                 className={styles.socialIcon}
                 src={icon}
                 alt=""
