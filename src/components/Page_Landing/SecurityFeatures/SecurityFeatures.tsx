@@ -43,21 +43,13 @@ function SecurityFeatures() {
         <div className={styles.grid}>
           {FEATURES.map((feature) => (
             <article key={feature.title} className={styles.card}>
-              <div className={styles.art}>
-                {feature.art}
-              </div>
+              <div className={styles.art}>{feature.art}</div>
               <div className={styles.cardText}>
                 <h3 className={styles.cardTitle}>
-                  <TextReveal
-                    text={feature.title}
-                    effect="typewriter"
-                    staggerDuration={0.05}
-                    splitBy="char"
-                    delay={0.3}
-                  />
+                  <TextReveal text={feature.title} staggerDuration={0.1} />
                 </h3>
 
-                <FadeIn direction="left">
+                <FadeIn direction="up">
                   <p className={styles.cardBody}>{feature.body}</p>
                 </FadeIn>
               </div>

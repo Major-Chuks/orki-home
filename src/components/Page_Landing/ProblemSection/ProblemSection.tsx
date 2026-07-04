@@ -59,7 +59,6 @@ function ProblemSection() {
         <div className={styles.grid}>
           {PROBLEMS.map((item, idx) => (
             <FadeIn
-              delay={0.2 + idx * 0.15}
               key={item.title}
               className={styles.cardWrapper}
               motionType="bouncy"

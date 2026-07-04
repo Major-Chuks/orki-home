@@ -216,9 +216,9 @@
   }
 }
 
-@media screen and (max-width: 1060px) {
+@media screen and (max-width: 1024px) {
   .section {
-    padding: 40px 16px;
+    max-width: 820px;
   }
 
   .inner {
@@ -243,5 +243,11 @@
 
   .formRow {
     flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .section {
+    padding: 40px 16px;
   }
 }

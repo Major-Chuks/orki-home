@@ -146,20 +146,9 @@ function GlobalPaymentMap() {
         </FadeIn>
 
         {/* Notice banner */}
-        <motion.div
-          className={styles.notice}
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: "-100px" }}
-          transition={{
-            delay: 1.5,
-            type: "spring",
-            stiffness: 200,
-            damping: 20,
-          }}
-        >
+        <FadeIn motionType="bouncy" className={styles.notice}>
           Your business has successfully received <strong>$75,000 USD</strong>
-        </motion.div>
+        </FadeIn>
 
         <div className={styles.mapArea}>
           <motion.div
@@ -189,8 +178,19 @@ function GlobalPaymentMap() {
                   <stop offset="0%" stopColor="#875ade" stopOpacity="0.8" />
                   <stop offset="100%" stopColor="#40d6c4" stopOpacity="0.8" />
                 </linearGradient>
-                <filter id="badgeShadow" x="-20%" y="-20%" width="140%" height="140%">
-                  <feDropShadow dx="0" dy="2" stdDeviation="2" floodOpacity="0.15" />
+                <filter
+                  id="badgeShadow"
+                  x="-20%"
+                  y="-20%"
+                  width="140%"
+                  height="140%"
+                >
+                  <feDropShadow
+                    dx="0"
+                    dy="2"
+                    stdDeviation="2"
+                    floodOpacity="0.15"
+                  />
                 </filter>
               </defs>
               {lines.map((line, i) => (

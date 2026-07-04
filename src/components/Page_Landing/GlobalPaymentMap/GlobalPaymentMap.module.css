@@ -188,6 +188,7 @@
   left: 48%;
   transform: translate(-50%, -50%);
   z-index: 3;
+  box-shadow: 0 0px 60px rgba(196, 180, 255);
 }
 
 .hub img {
@@ -237,8 +238,19 @@
 }
 
 @media screen and (max-width: 1280px) {
+  .section {
+    max-width: 1024px;
+  }
+
   .heading {
     font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 1060px) {
+  .section {
+    padding: 60px 32px;
+    max-width: 900px;
   }
 }
 
@@ -327,10 +339,6 @@
 }
 
 @media screen and (max-width: 640px) {
-  .section {
-    padding: 46px 16px;
-  }
-
   .heading {
     font-size: 32px;
   }
@@ -342,5 +350,19 @@
 
   .mapArea {
     height: 222px;
+  }
+
+  .notice {
+    font-size: 8px;
+    font-weight: 400;
+    line-height: 10.418px;
+    letter-spacing: -0.078px;
+    padding: 4px 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .section {
+    padding: 40px 16px;
   }
 }

@@ -99,6 +99,14 @@
   color: #242628;
 }
 
+.linkItem svg {
+  transition: all 300ms;
+}
+
+.linkItem:hover svg {
+  transform: translateX(4px);
+}
+
 .ctaArea {
   margin-top: auto;
   display: flex;

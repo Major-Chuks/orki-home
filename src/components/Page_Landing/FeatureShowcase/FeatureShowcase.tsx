@@ -62,8 +62,7 @@ function FeatureShowcase() {
                       <Image src={feature.icon} alt="" />
                     </div>
                     <TextReveal
-                      splitBy="char"
-                      effect="typewriter"
+                      splitBy="word"
                       delay={0.1}
                       text={feature.tag}
                       staggerDuration={0.1}
