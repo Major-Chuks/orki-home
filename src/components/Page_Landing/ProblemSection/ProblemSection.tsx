@@ -1,3 +1,6 @@
+"use client";
+
+import { useDragScroll } from "@/hooks/useDragScroll";
 import ImagePlaceholder from "../ImagePlaceholder/ImagePlaceholder";
 import styles from "./ProblemSection.module.css";
 import gp1 from "@/assets/landing-page/global-payment1.png";
@@ -39,24 +42,26 @@ const PROBLEMS = [
 ] as const;
 
 function ProblemSection() {
+  const { ref, events } = useDragScroll<HTMLDivElement>();
+
   return (
     <section className={styles.section}>
       <div className={styles.inner}>
         <FadeIn delay={0.1}>
           <h2 className={styles.heading}>
-            Global Payment weren&apos;t built for
-            <br />
-            stablecoins
+            It’s not just a payment, <br />
+            it’s an operation
           </h2>
         </FadeIn>
-        <FadeIn delay={0.3}>
+        <FadeIn delay={0.2}>
           <p className={styles.subheading}>
-            Receiving payments, converting between fiat and stablecoins, and
-            spending globally still requires multiple disconnected platforms.
+            From payroll to vendor payouts, managing global finances means
+            juggling multiple platforms, high fees, and compliance hurdles.
+            Orki gives you one unified dashboard to handle it all effortlessly.
           </p>
         </FadeIn>
 
-        <div className={styles.grid}>
+        <div className={styles.grid} ref={ref} {...events}>
           {PROBLEMS.map((item, idx) => (
             <FadeIn
               key={item.title}

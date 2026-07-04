@@ -1,3 +1,6 @@
+"use client";
+
+import { useDragScroll } from "@/hooks/useDragScroll";
 import styles from "./SecurityFeatures.module.css";
 import FadeIn from "../Animations/FadeIn";
 import TextReveal from "../Animations/TextReveal";
@@ -24,6 +27,8 @@ const FEATURES = [
 ];
 
 function SecurityFeatures() {
+  const { ref, events } = useDragScroll<HTMLDivElement>();
+
   return (
     <section className={styles.section}>
       <div className={styles.inner}>
@@ -40,7 +45,7 @@ function SecurityFeatures() {
           </p>
         </FadeIn>
 
-        <div className={styles.grid}>
+        <div className={styles.grid} ref={ref} {...events}>
           {FEATURES.map((feature) => (
             <article key={feature.title} className={styles.card}>
               <div className={styles.art}>{feature.art}</div>

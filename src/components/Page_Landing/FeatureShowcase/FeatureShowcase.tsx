@@ -1,4 +1,5 @@
-import ImagePlaceholder from "../ImagePlaceholder/ImagePlaceholder";
+"use client";
+
 import styles from "./FeatureShowcase.module.css";
 import ams1 from "@/assets/landing-page/ams-1.png";
 import ams2 from "@/assets/landing-page/ams-2.png";
@@ -9,6 +10,8 @@ import amsIcon3 from "@/assets/landing-page/ams-icon3.svg";
 import Image from "next/image";
 import TextReveal from "../Animations/TextReveal";
 import FadeIn from "../Animations/FadeIn";
+
+import { useDragScroll } from "@/hooks/useDragScroll";
 
 const FEATURES = [
   {
@@ -35,6 +38,8 @@ const FEATURES = [
 ] as const;
 
 function FeatureShowcase() {
+  const { ref, events } = useDragScroll<HTMLDivElement>();
+
   return (
     <section className={styles.section}>
       <div className={styles.inner}>
@@ -48,7 +53,7 @@ function FeatureShowcase() {
           </p>
         </FadeIn>
 
-        <div className={styles.grid}>
+        <div className={styles.grid} ref={ref} {...events}>
           {FEATURES.map((feature) => (
             <div key={feature.title} className={styles.outerCard}>
               <div className={styles.overlay} />

@@ -166,12 +166,46 @@
   .section {
     max-width: 820px;
   }
+
+  /* Transform grid into a horizontally scrollable list on tablet */
+  .grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 32px;
+    padding-bottom: 24px; /* Space for scrollbar */
+    gap: 20px;
+    /* Hide scrollbar for a cleaner swipe experience */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    cursor: grab;
+  }
+  
+  .grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .outerCard {
+    flex: 0 0 340px; /* Fixed width for swipe cards */
+    scroll-snap-align: start;
+    min-width: unset; /* Remove min-width to rely on flex-basis */
+  }
 }
 
 @media screen and (max-width: 640px) {
   .section {
     padding: 40px 16px;
     padding-bottom: 60px;
+  }
+
+  .grid {
+    scroll-padding-left: 16px;
+    gap: 16px;
+  }
+
+  .outerCard {
+    flex: 0 0 85%; /* 85% width so the next card peeks in */
   }
 
   .heading {
