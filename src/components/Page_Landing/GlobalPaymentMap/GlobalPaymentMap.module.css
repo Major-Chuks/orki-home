@@ -3,6 +3,7 @@
   max-width: 1104px;
   padding-top: 64px;
   padding-bottom: 96px;
+  overflow-x: clip;
 }
 
 .inner {
@@ -37,6 +38,8 @@
 }
 
 .notice {
+  width: max-content;
+  margin: 0 auto;
   border-radius: 16777200px;
   border: 1px solid var(--Gradient, #875ade);
   background: #fff;
@@ -44,50 +47,282 @@
     0 0 0 1px #ede9fe,
     0 2px 4px -2px rgba(0, 0, 0, 0.1);
   padding: 8px 20px;
+  z-index: 10;
+  position: relative;
 
   color: var(--grey-600, #727680);
   font-family: Geist;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 20px; /* 142.857% */
-  letter-spacing: -0.15px;
-
-  display: none;
-}
-
-.notice strong {
-  color: var(--grey-600, #242628);
-  font-family: Geist;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 800;
   line-height: 20px;
   letter-spacing: -0.15px;
 }
 
-.grid {
-  display: none;
+.notice strong {
+  color: var(--grey-600, #242628);
+  font-weight: 800;
 }
 
 .mapArea {
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
+  position: relative;
   width: 100%;
-  max-width: 1104px;
-  max-height: 662px;
-  height: auto;
+  max-width: 1024px;
+  height: 576px;
 }
 
-.mapArea img {
+.grid {
+  position: absolute;
+  width: 110%;
+  height: 110%;
+  top: -8%;
+  left: -7%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.linesOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.card {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  width: 176px;
+  height: 120px;
+  padding: 16px 20px;
+  border-radius: 16px;
+  border: 2px solid var(--Orki-Gradient, #b2c2e5);
+  background: #fff;
+  box-shadow:
+    0 0 0 1px #ede9fe,
+    0 8px 30px 0 rgba(124, 58, 237, 0.12);
+}
+
+.flag {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16777200px;
+  background: #fff;
+  box-shadow:
+    0 0 0 1px #ede9fe,
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+.flag img {
+  width: 18px;
+  height: 18px;
+}
+
+.cardText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.cardName {
+  color: #242628;
+  text-align: center;
+  font-size: 16px;
+  font-family: Geist;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: -0.312px;
+  margin-bottom: 4px;
+}
+
+.cardMeta {
+  color: var(--grey-600, #727680);
+  text-align: center;
+  font-family: Geist;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  margin-bottom: 4px;
+}
+
+.cardAmount {
+  color: #242628;
+  text-align: center;
+  font-family: Geist;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: -0.312px;
+}
+
+.hub {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  border: 3px solid #875ade;
+  background: #fff;
+  position: absolute;
+  top: 44%;
+  left: 48%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.hub img {
+  width: 48px;
+  height: 25.043px;
+  flex-shrink: 0;
+}
+
+.hubMark {
+  width: 48px;
+  height: 25.043px;
+  flex-shrink: 0;
+  aspect-ratio: 23/12;
+}
+
+/* Placements — coordinates match SVG path start points:
+   All cards use translate(-50%, -50%) so top/left = card center. */
+.agency {
+  /* card center at SVG (12, 12) → 12% left, 12% top */
+  top: 12%;
+  left: 12%;
+  transform: translate(-50%, -50%);
+}
+.investor {
+  /* card center at SVG (82, 22) → 82% left, 22% top */
+  top: 22%;
+  left: 82%;
+  transform: translate(-50%, -50%);
+}
+.service {
+  /* card center at SVG (12, 57) → 12% left, 57% top */
+  top: 57%;
+  left: 12%;
+  transform: translate(-50%, -50%);
+}
+.client {
+  /* card center at SVG (45, 77) → 45% left, 77% top */
+  top: 77%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+}
+.wallet {
+  /* card center at SVG (80, 65) → 80% left, 65% top */
+  top: 65%;
+  left: 80%;
+  transform: translate(-50%, -50%);
 }
 
 @media screen and (max-width: 1280px) {
   .heading {
     font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .mapArea {
+    aspect-ratio: auto;
+    height: 320px;
+  }
+
+  .card {
+    width: 72px;
+    height: 54px;
+    padding: 6px 8px;
+    transform: scale(0.85);
+    border-radius: 7px;
+  }
+
+  .cardAmount,
+  .cardName {
+    font-size: 8px;
+    font-style: normal;
+    line-height: 9.788px;
+    letter-spacing: -0.127px;
+    margin-bottom: 3px;
+  }
+
+  .cardMeta {
+    font-size: 6px;
+    font-weight: 400;
+    line-height: 6.525px;
+    margin-bottom: 3px;
+  }
+
+  .flag {
+    width: 16px;
+    height: 16px;
+    top: -8px;
+  }
+
+  .flag img {
+    width: 8px;
+    height: 8px;
+  }
+
+  .animatedBadge {
+    transform: scale(0.57);
+    transform-origin: 0 0;
+  }
+
+  .hub {
+    width: 38.12px;
+    height: 38.12px;
+    border-radius: 8px;
+  }
+
+  .hub img {
+    width: 22.872px;
+    height: 11.933px;
+  }
+
+  .agency {
+    left: 20%;
+    top: 15%;
+    transform: translate(-50%, -50%) scale(0.85);
+  }
+  .investor {
+    left: 80%;
+    top: 15%;
+    transform: translate(-50%, -50%) scale(0.85);
+  }
+  .service {
+    left: 20%;
+    top: 75%;
+    transform: translate(-50%, -50%) scale(0.85);
+  }
+  .wallet {
+    left: 80%;
+    top: 75%;
+    transform: translate(-50%, -50%) scale(0.85);
+  }
+  .client {
+    left: 50%;
+    top: 85%;
+    transform: translate(-50%, -50%) scale(0.85);
   }
 }
 
@@ -103,5 +338,9 @@
   .subheading {
     font-size: 16px;
     margin-bottom: 46px;
+  }
+
+  .mapArea {
+    height: 222px;
   }
 }

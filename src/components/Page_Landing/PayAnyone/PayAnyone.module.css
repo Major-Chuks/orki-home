@@ -71,7 +71,10 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-image: radial-gradient(#875ade 1.5px, transparent 1.5px);
+  background-image: radial-gradient(
+    rgb(134, 90, 222, 0.3) 1.5px,
+    transparent 1.5px
+  );
   background-size: 24px 24px;
   background-position: center;
   pointer-events: none;
