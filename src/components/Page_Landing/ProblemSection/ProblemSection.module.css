@@ -39,12 +39,16 @@
   margin-bottom: 64px;
 }
 
+.fader {
+  width: 100%;
+}
+
 .grid {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .cardWrapper {
@@ -154,6 +158,7 @@
     scrollbar-width: none;
     -ms-overflow-style: none;
     cursor: grab;
+    overflow: auto;
   }
 
   .grid::-webkit-scrollbar {

@@ -87,7 +87,7 @@ function ProblemSection() {
         </FadeIn>
 
         {width > 1024 ? (
-          <FadeIn delay={0.1} motionType="bouncy">
+          <FadeIn delay={0.1} motionType="bouncy" className={styles.fader}>
             {scrollable}
           </FadeIn>
         ) : (

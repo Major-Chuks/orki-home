@@ -4,6 +4,7 @@
   padding-top: 64px;
   padding-bottom: 96px;
   overflow-x: clip;
+  overflow: hidden;
 }
 
 .inner {
@@ -92,8 +93,37 @@
   z-index: 1;
 }
 
-.card {
+.cardWrapper {
   position: absolute;
+  z-index: 2;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 1.5px;
+
+  background: linear-gradient(
+    91deg,
+    #b2c2e5 -1.27%,
+    #9392e2 18.49%,
+    #d7bfa3 39.71%,
+    #ecbd55 60.92%,
+    #b2c2e5 79.24%,
+    #6be1c6 98.99%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.card {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -103,7 +133,7 @@
   height: 120px;
   padding: 16px 20px;
   border-radius: 16px;
-  border: 2px solid var(--Orki-Gradient, #b2c2e5);
+  /* border: 2px solid var(--Orki-Gradient, #b2c2e5); */
   background: #fff;
   box-shadow:
     0 0 0 1px #ede9fe,
@@ -174,6 +204,14 @@
   letter-spacing: -0.312px;
 }
 
+.hubWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
 .hub {
   width: 80px;
   height: 80px;
@@ -183,11 +221,6 @@
   border-radius: 16px;
   border: 3px solid #875ade;
   background: #fff;
-  position: absolute;
-  top: 44%;
-  left: 48%;
-  transform: translate(-50%, -50%);
-  z-index: 3;
   box-shadow: 0 0px 60px rgba(196, 180, 255);
 }
 
@@ -207,32 +240,27 @@
 /* Placements — coordinates match SVG path start points:
    All cards use translate(-50%, -50%) so top/left = card center. */
 .agency {
-  /* card center at SVG (12, 12) → 12% left, 12% top */
-  top: 12%;
-  left: 12%;
+  top: 18%;
+  left: 20%;
   transform: translate(-50%, -50%);
 }
 .investor {
-  /* card center at SVG (82, 22) → 82% left, 22% top */
-  top: 22%;
-  left: 82%;
+  top: 26%;
+  left: 80%;
   transform: translate(-50%, -50%);
 }
 .service {
-  /* card center at SVG (12, 57) → 12% left, 57% top */
-  top: 57%;
-  left: 12%;
+  top: 62%;
+  left: 20%;
   transform: translate(-50%, -50%);
 }
 .client {
-  /* card center at SVG (45, 77) → 45% left, 77% top */
-  top: 77%;
-  left: 45%;
+  top: 82%;
+  left: 50%;
   transform: translate(-50%, -50%);
 }
 .wallet {
-  /* card center at SVG (80, 65) → 80% left, 65% top */
-  top: 65%;
+  top: 70%;
   left: 80%;
   transform: translate(-50%, -50%);
 }
@@ -260,11 +288,14 @@
     height: 320px;
   }
 
+  .card::before {
+    border-radius: 7px;
+  }
+
   .card {
     width: 72px;
     height: 54px;
     padding: 6px 8px;
-    transform: scale(0.85);
     border-radius: 7px;
   }
 

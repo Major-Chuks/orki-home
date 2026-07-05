@@ -173,10 +173,14 @@ function GlobalPaymentMap() {
                   x1="0%"
                   y1="0%"
                   x2="100%"
-                  y2="100%"
+                  y2="0%"
                 >
-                  <stop offset="0%" stopColor="#875ade" stopOpacity="0.8" />
-                  <stop offset="100%" stopColor="#40d6c4" stopOpacity="0.8" />
+                  <stop offset="-1.27%" stopColor="#B2C2E5" />
+                  <stop offset="18.49%" stopColor="#9392E2" />
+                  <stop offset="39.71%" stopColor="#D7BFA3" />
+                  <stop offset="60.92%" stopColor="#ECBD55" />
+                  <stop offset="79.24%" stopColor="#B2C2E5" />
+                  <stop offset="98.99%" stopColor="#6BE1C6" />
                 </linearGradient>
                 <filter
                   id="badgeShadow"
@@ -261,38 +265,44 @@ function GlobalPaymentMap() {
             </svg>
 
             {/* Hub */}
-            <motion.div
-              className={styles.hub}
-              variants={itemVariants}
-              ref={hubRef}
-            >
-              <Image
-                src={logo}
-                alt="Orki logo mark"
-                className={styles.hubMark}
-              />
-            </motion.div>
+            <div className={styles.hubWrapper}>
+              <motion.div
+                className={styles.hub}
+                variants={itemVariants}
+                ref={hubRef}
+              >
+                <Image
+                  src={logo}
+                  alt="Orki logo mark"
+                  className={styles.hubMark}
+                />
+              </motion.div>
+            </div>
 
             {/* Cards */}
             {PAYMENTS.map((payment, i) => (
-              <motion.div
+              <div
                 key={payment.name}
-                ref={(el) => {
-                  cardRefs.current[i] = el;
-                }}
-                className={`${styles.card} ${styles[payment.area]}`}
-                variants={itemVariants}
-                whileHover={{ scale: 1.05, zIndex: 10 }}
+                className={`${styles.cardWrapper} ${styles[payment.area]}`}
               >
-                <div className={styles.flag}>
-                  <Image src={payment.flag} alt={`${payment.name} flag`} />
-                </div>
-                <div className={styles.cardText}>
-                  <span className={styles.cardName}>{payment.name}</span>
-                  <span className={styles.cardMeta}>{payment.meta}</span>
-                  <span className={styles.cardAmount}>{payment.amount}</span>
-                </div>
-              </motion.div>
+                <motion.div
+                  ref={(el) => {
+                    cardRefs.current[i] = el;
+                  }}
+                  className={styles.card}
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.05, zIndex: 10 }}
+                >
+                  <div className={styles.flag}>
+                    <Image src={payment.flag} alt={`${payment.name} flag`} />
+                  </div>
+                  <div className={styles.cardText}>
+                    <span className={styles.cardName}>{payment.name}</span>
+                    <span className={styles.cardMeta}>{payment.meta}</span>
+                    <span className={styles.cardAmount}>{payment.amount}</span>
+                  </div>
+                </motion.div>
+              </div>
             ))}
           </motion.div>
         </div>
