@@ -31,6 +31,10 @@ interface TextRevealProps {
   splitBy?: "word" | "char" | "sentence";
   onAnimationComplete?: () => void;
   timelineTrigger?: boolean;
+  /**
+   * If true, centers the text horizontally.
+   */
+  center?: boolean;
 }
 
 export default function TextReveal({
@@ -46,6 +50,7 @@ export default function TextReveal({
   xOffset = 15,
   onAnimationComplete,
   timelineTrigger,
+  center = false,
 }: TextRevealProps) {
   const elements =
     splitBy === "word"
@@ -111,6 +116,7 @@ export default function TextReveal({
         display: "inline-flex",
         flexWrap: "wrap",
         columnGap: splitBy === "word" ? "0.25em" : "0",
+        justifyContent: center ? "center" : "flex-start",
       }}
     >
       {elements.map((el, index) => (

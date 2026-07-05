@@ -45,7 +45,11 @@ function FeatureShowcase() {
     <section className={styles.section}>
       <div className={styles.inner}>
         <h2 className={styles.heading}>
-          <TextReveal text="Accept. Manage. Spend." staggerDuration={0.1} />
+          <TextReveal
+            center={true}
+            text="Accept. Manage. Spend."
+            staggerDuration={0.1}
+          />
         </h2>
         <FadeIn delay={0.2}>
           <p className={styles.subheading}>
