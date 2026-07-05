@@ -40,7 +40,7 @@
 
 .notice {
   width: max-content;
-  margin: 0 auto;
+  margin: 0 auto 48px auto;
   border-radius: 16777200px;
   border: 1px solid var(--Gradient, #875ade);
   background: #fff;
@@ -389,6 +389,7 @@
     line-height: 10.418px;
     letter-spacing: -0.078px;
     padding: 4px 10px;
+    margin-bottom: 24px;
   }
 }
 
