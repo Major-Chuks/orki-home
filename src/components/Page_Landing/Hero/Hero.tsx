@@ -32,12 +32,14 @@ function Hero() {
           </p>
         </FadeIn>
 
-        <div className={styles.ctaRow}>
-          <Button size="lg">Get Started</Button>
-          <Button variant="secondary" size="lg">
-            Book Demo
-          </Button>
-        </div>
+        <FadeIn delay={0.4}>
+          <div className={styles.ctaRow}>
+            <Button size="lg">Get Started</Button>
+            <Button variant="secondary" size="lg">
+              Book Demo
+            </Button>
+          </div>
+        </FadeIn>
 
         <FadeIn delay={0.9}>
           <div className={styles.dashboardPreview}>

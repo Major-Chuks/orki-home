@@ -12,6 +12,7 @@ import TextReveal from "../Animations/TextReveal";
 import FadeIn from "../Animations/FadeIn";
 
 import { useDragScroll } from "@/hooks/useDragScroll";
+import ShimmerReveal from "../Animations/ShimmerReveal";
 
 const FEATURES = [
   {
@@ -62,21 +63,16 @@ function FeatureShowcase() {
                   <Image src={feature.image} alt="" />
                 </div>
                 <div className={styles.cardText}>
-                  <div className={styles.tag}>
+                  <FadeIn delay={0.05} className={styles.tag}>
                     <div className={styles.tagIcon}>
                       <Image src={feature.icon} alt="" />
                     </div>
-                    <TextReveal
-                      splitBy="word"
-                      delay={0.1}
-                      text={feature.tag}
-                      staggerDuration={0.1}
-                    />
-                  </div>
-                  <FadeIn delay={0.2}>
+                    {feature.tag}
+                  </FadeIn>
+                  <FadeIn delay={0.1}>
                     <h3 className={styles.cardTitle}>{feature.title}</h3>
                   </FadeIn>
-                  <FadeIn delay={0.2}>
+                  <FadeIn delay={0.125}>
                     <p className={styles.cardBody}>{feature.body}</p>
                   </FadeIn>
                 </div>

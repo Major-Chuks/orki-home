@@ -13,6 +13,7 @@ import gp4Bg from "@/assets/landing-page/global-payment4-bg.png";
 import Image from "next/image";
 import FadeIn from "../Animations/FadeIn";
 import ScaleIn from "../Animations/ScaleIn";
+import useWidth from "@/hooks/useWidth";
 
 const PROBLEMS = [
   {
@@ -43,6 +44,30 @@ const PROBLEMS = [
 
 function ProblemSection() {
   const { ref, events } = useDragScroll<HTMLDivElement>();
+  const width = useWidth();
+
+  const scrollable = (
+    <div className={styles.grid} ref={ref} {...events}>
+      {PROBLEMS.map((item, idx) => (
+        <div key={item.title} className={styles.cardWrapper}>
+          <article
+            style={{
+              backgroundImage: item.bgImage ? `url(${item.bgImage.src})` : "",
+            }}
+            className={styles.card}
+          >
+            <div className={styles.cardText}>
+              <h3 className={styles.cardTitle}>{item.title}</h3>
+              <p className={styles.cardBody}>{item.body}</p>
+            </div>
+            <div className={styles.cardArt}>
+              <Image src={item.art} alt="" />
+            </div>
+          </article>
+        </div>
+      ))}
+    </div>
+  );
 
   return (
     <section className={styles.section}>
@@ -56,37 +81,18 @@ function ProblemSection() {
         <FadeIn delay={0.2}>
           <p className={styles.subheading}>
             From payroll to vendor payouts, managing global finances means
-            juggling multiple platforms, high fees, and compliance hurdles.
-            Orki gives you one unified dashboard to handle it all effortlessly.
+            juggling multiple platforms, high fees, and compliance hurdles. Orki
+            gives you one unified dashboard to handle it all effortlessly.
           </p>
         </FadeIn>
 
-        <div className={styles.grid} ref={ref} {...events}>
-          {PROBLEMS.map((item, idx) => (
-            <FadeIn
-              key={item.title}
-              className={styles.cardWrapper}
-              motionType="bouncy"
-            >
-              <article
-                style={{
-                  backgroundImage: item.bgImage
-                    ? `url(${item.bgImage.src})`
-                    : "",
-                }}
-                className={styles.card}
-              >
-                <div className={styles.cardText}>
-                  <h3 className={styles.cardTitle}>{item.title}</h3>
-                  <p className={styles.cardBody}>{item.body}</p>
-                </div>
-                <div className={styles.cardArt}>
-                  <Image src={item.art} alt="" />
-                </div>
-              </article>
-            </FadeIn>
-          ))}
-        </div>
+        {width > 1024 ? (
+          <FadeIn delay={0.1} motionType="bouncy">
+            {scrollable}
+          </FadeIn>
+        ) : (
+          scrollable
+        )}
       </div>
     </section>
   );
