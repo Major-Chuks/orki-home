@@ -24,9 +24,11 @@ function Hero() {
           </p>
         </FadeIn>
 
-        <div className={styles.ctaRow}>
-          <Button size="lg">Get Started</Button>
-        </div>
+        <FadeIn delay={0.4}>
+          <div className={styles.ctaRow}>
+            <Button size="lg">Get Started</Button>
+          </div>
+        </FadeIn>
       </div>
     </section>
   );

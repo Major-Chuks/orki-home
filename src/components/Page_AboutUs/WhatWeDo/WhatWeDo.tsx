@@ -6,6 +6,8 @@ import icon3 from "@/assets/landing-page/we-icon3.svg";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import FadeIn from "@/components/Page_Landing/Animations/FadeIn";
+import { useDragScroll } from "@/hooks/useDragScroll";
+import useWidth from "@/hooks/useWidth";
 
 const FEATURES = [
   {
@@ -32,6 +34,40 @@ const FEATURES = [
 ];
 
 const WhatWeDo = () => {
+  const { ref, events } = useDragScroll<HTMLDivElement>();
+  const width = useWidth();
+
+  const scrollable = (
+    <div className={styles.grid} ref={ref} {...events}>
+      {FEATURES.map((feature, idx) => (
+        <div key={feature.id} className={styles.cardWrapper}>
+          <div className={styles.card}>
+            <div className={styles.overlay}></div>
+            <div className={styles.top}>
+              <div className={styles.cardId}>{feature.id}</div>
+              <div className={styles.cardIcon}>
+                <Image src={feature.icon} alt="" />
+              </div>
+            </div>
+            <div className={styles.cardTitle}>{feature.title}</div>
+            <div className={styles.cardBody}>{feature.body}</div>
+            <div className={styles.offset}></div>
+            <div className={styles.status}>
+              <span
+                className={`${styles.dot} ${feature.isLive && styles.liveDot}`}
+              ></span>
+              {feature.isLive ? (
+                <span className={styles.live}>Live now</span>
+              ) : (
+                <span>Coming soon</span>
+              )}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+
   return (
     <div className={styles.section}>
       <div className={styles.inner}>
@@ -46,39 +82,13 @@ const WhatWeDo = () => {
           </button>
         </div>
 
-        <div className={styles.grid}>
-          {FEATURES.map((feature, idx) => (
-            <FadeIn
-              delay={0.2 + idx * 0.15}
-              motionType="bouncy"
-              key={feature.id}
-              className={styles.cardWrapper}
-            >
-              <div className={styles.card}>
-                <div className={styles.overlay}></div>
-                <div className={styles.top}>
-                  <div className={styles.cardId}>{feature.id}</div>
-                  <div className={styles.cardIcon}>
-                    <Image src={feature.icon} alt="" />
-                  </div>
-                </div>
-                <div className={styles.cardTitle}>{feature.title}</div>
-                <div className={styles.cardBody}>{feature.body}</div>
-                <div className={styles.offset}></div>
-                <div className={styles.status}>
-                  <span
-                    className={`${styles.dot} ${feature.isLive && styles.liveDot}`}
-                  ></span>
-                  {feature.isLive ? (
-                    <span className={styles.live}>Live now</span>
-                  ) : (
-                    <span>Coming soon</span>
-                  )}
-                </div>
-              </div>
-            </FadeIn>
-          ))}
-        </div>
+        {width > 1024 ? (
+          <FadeIn delay={0.1} motionType="bouncy">
+            {scrollable}
+          </FadeIn>
+        ) : (
+          scrollable
+        )}
       </div>
     </div>
   );

@@ -181,7 +181,7 @@
     -ms-overflow-style: none;
     cursor: grab;
   }
-  
+
   .grid::-webkit-scrollbar {
     display: none;
   }
@@ -194,11 +194,6 @@
 }
 
 @media screen and (max-width: 640px) {
-  .section {
-    padding: 40px 16px;
-    padding-bottom: 60px;
-  }
-
   .grid {
     scroll-padding-left: 16px;
     gap: 16px;
@@ -243,5 +238,12 @@
 
   .cardBody {
     font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .section {
+    padding: 40px 16px;
+    padding-bottom: 60px;
   }
 }

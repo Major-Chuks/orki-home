@@ -98,12 +98,6 @@
 }
 
 @media screen and (max-width: 640px) {
-  .hero {
-    padding: 16px;
-    padding-top: 90px;
-    padding-bottom: 0;
-  }
-
   .heading {
     font-size: 40px;
     font-weight: 500;
@@ -120,6 +114,12 @@
 }
 
 @media screen and (max-width: 480px) {
+  .hero {
+    padding: 16px;
+    padding-top: 90px;
+    padding-bottom: 0;
+  }
+
   .heading {
     font-size: 28px;
     font-weight: 500;

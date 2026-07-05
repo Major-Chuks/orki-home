@@ -104,11 +104,13 @@
   }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 1024px) {
   .section {
-    padding: 60px 16px;
+    max-width: 820px;
   }
+}
 
+@media screen and (max-width: 640px) {
   .card {
     padding: 24px 16px;
   }
@@ -117,5 +119,11 @@
     font-size: 16px;
     line-height: 26px;
     letter-spacing: -0.13px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .section {
+    padding: 60px 16px;
   }
 }

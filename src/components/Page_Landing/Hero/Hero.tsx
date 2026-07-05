@@ -3,7 +3,6 @@ import Button from "../Button/Button";
 import styles from "./Hero.module.css";
 import appPreview from "@/assets/landing-page/app-preview.png";
 import FadeIn from "../Animations/FadeIn";
-import ScrollScale from "../Animations/ScrollScale";
 import worldVector from "@/assets/landing-page/world-vector.svg";
 
 function Hero() {
