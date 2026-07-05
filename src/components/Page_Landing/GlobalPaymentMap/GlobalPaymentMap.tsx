@@ -157,7 +157,7 @@ function GlobalPaymentMap() {
             variants={containerVariants}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: false, margin: "-100px" }}
+            viewport={{ once: true, margin: "-100px" }}
             ref={containerRef}
           >
             {/* SVG Lines Overlay */}
