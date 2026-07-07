@@ -61,8 +61,15 @@ function UseCases() {
       </div>
 
       <div className={styles.list}>
-        {USE_CASES.map((useCase) => (
-          <article key={useCase.heading} className={styles.card}>
+        {USE_CASES.map((useCase, idx) => (
+          <article 
+            key={useCase.heading} 
+            className={styles.card}
+            style={{ 
+              top: `calc(120px + ${idx * 32}px)`,
+              zIndex: idx + 1 
+            }}
+          >
             <div className={styles.art}>
               <Image src={useCase.image} alt="" />
               <div className={styles.overlay} />

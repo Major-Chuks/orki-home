@@ -51,6 +51,7 @@
   align-items: center;
   justify-content: flex-start;
   gap: 56px;
+  position: sticky;
 }
 
 .art {
@@ -175,6 +176,8 @@
     flex-direction: column;
     padding: 16px;
     gap: 24px;
+    position: relative;
+    top: auto !important;
   }
 
   .cardHeading {
